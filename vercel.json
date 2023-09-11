@@ -1,0 +1,6 @@
+{
+    "version":2,
+    "name":"express-rate-limit",
+    "builds":[{"src":"app.js","use":"@vercel/node"}],
+    "routes":[{"src":"/.(.*)","use":"/app.js"}]
+}
