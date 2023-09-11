@@ -3,7 +3,7 @@ const rateLimit = require("express-rate-limit");
 // Define rate limiting middleware for the "login" route
 const loginLimiter = rateLimit({
 
-  windowMs: 15 * 60 * 1000, // 15 minutes
+  windowMs: 1 * 60 * 1000, // 1 minutes
   max: 5, // Maximum 5 requests per 15 minutes
   keyGenerator: (req) => {
     const userIp = req.ip;
