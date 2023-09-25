@@ -1,10 +1,14 @@
 const express = require("express");
 const { applyRateLimitToLoginRoute } = require("./jwt");
 const os = require("os");
+const helmet = require("helmet");
 const app = express();
+
 
 const port = 5600;
 const laptopIdentifier = os.hostname();
+// Use helmet middleware to set security headers
+app.use(helmet());
 
 app.use(applyRateLimitToLoginRoute);
 app.use((req, res, next) => {
